@@ -1,0 +1,657 @@
+/* ---------------- GLOBAL RESET ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---------------- HERO BACKGROUND ---------------- */
+.header-hero {
+  background: url("image/bg.jpg") no-repeat center center/cover;
+  height: 105vh;
+  width: 100%;
+  position: relative;
+}
+.header-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.789); /* Dark overlay */
+  z-index: 0;
+} 
+
+/* ---------------- HEADER ---------------- */
+.header {
+  height: 155px; /* Netflix jaisa */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------- LOGO ---------------- */
+.logo-img {
+  height: 180px;     /* Default */
+  width: auto;
+  display: block;
+  object-fit: contain;
+  max-width: 180px;  /* Prevent overflow */
+  min-height: 60px;  /* Prevent too small on mobile */
+}
+.logo-img:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+
+}
+
+/* ---------------- RIGHT SECTION ---------------- */
+.lang-signin {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ---------------- LANGUAGE DROPDOWN ---------------- */
+.language {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  height: 35px;
+  min-width: 120px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 35px 5px 10px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Custom arrow */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='18' viewBox='0 0 24 24' width='18' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+}
+
+.language option {
+  background: rgb(40, 40, 40);
+  color: white;
+}
+
+/* ---------------- SIGNIN BUTTON ---------------- */
+.signin {
+  background: #dc1f1f;
+  color: white;
+  border: none;
+  height: 35px;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+.signin:hover {
+  background: #c70711;
+  border: 1px solid #ff1d29;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100vh - 120px);
+  padding: 0 26%;
+  position: relative;
+  z-index: 1;
+  gap: 30px;
+}
+
+.hero-text {
+  max-width: 100%;
+  color: white;
+}
+
+.hero-text h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-text h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.hero-text .btn {
+  width: 25%;
+  max-height: 50px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e50914;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background 0.2s ease-in-out;
+}
+.hero-text .btn:hover {
+  background: #b80d16;
+  cursor: pointer;
+}
+
+.email-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.email-input{
+
+  width: 50%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  font-size: 16px;
+  margin-right: 10px;
+  color: white;
+  background: #111111a3;  
+}
+input::placeholder {
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255,255,255,0.1); /* glow effect */
+}
+.email-input:focus {
+  outline: none;
+  border-color: #e50914;
+  box-shadow: 1px 1px 5px rgba(255, 64, 0, 0.689);
+}
+.email-input:hover{
+  border: 1px solid #ff0000;
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 992px) {
+  .header {
+    padding: 15px 5%;
+  }
+
+  .logo-img {
+    height: 85px;   /* Thoda chhota but readable */
+    min-height: 60px;
+  }
+
+  .language {
+    font-size: 14px;
+    min-width: 95px;
+  }
+
+  .signin {
+    font-size: 14px;
+    min-width: 90px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-img img {
+    width: 100%;
+  }
+}
+
+
+
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .logo-img {
+    height: 70px;   /* Mobile pe bhi visible */
+    min-height: 60px;
+  }
+  .lang-signin {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .language,
+  .signin {
+    flex: 1;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    padding: 10px 2%;
+  }
+
+  .logo-img {
+    height: 65px;   /* Chhota phones */
+    min-height: 55px;
+  }
+  .language {
+    font-size: 13px;
+    min-width: 80px;
+  }
+
+  .signin {
+    font-size: 13px;
+    min-width: 75px;
+  }
+}
+@media (max-width: 863px) {
+  .btn {
+    font-size: 14px;   /* ✅ chhota font */
+    padding: 10px 15px;
+    min-width: 100px;  /* ✅ thoda chhota button */
+  }
+}
+
+
+    
+/* ---------------- CURVE ---------------- */
+/* Curve wrapper */
+.curve {
+  background: radial-gradient(
+      50% 500% at 50% -420%,
+      rgba(64, 97, 231, 0.4) 90%,
+      rgba(0, 0, 0, 0.1) 100%
+    ),
+    black;
+  background-clip: padding-box;
+  position: relative;
+  height: 4.45rem;      /* curve ki height */
+  z-index: 5;
+  overflow-x: hidden;
+  margin-top: -2rem;
+  max-width: 140rem;
+  margin-inline: auto;
+}
+
+/* Curve shape */
+.curve-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  border: solid 0.25rem transparent;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  border-bottom: none;
+  background: radial-gradient(
+      50% 500% at 50% -420%,
+      rgba(64, 97, 231, 0.4) 80%,
+      rgba(0, 0, 0, 0.1) 100%
+    ),
+    black;
+  background-clip: padding-box;
+}
+
+/* Curve border gradient */
+.curve-container:before {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: -0.25rem;
+  z-index: -1;
+  background: linear-gradient(
+    to right,
+    rgba(33, 13, 22, 1) 16%,
+    rgba(184, 40, 105, 1),
+    rgba(229, 9, 20, 1),
+    rgba(184, 40, 105, 1),
+    rgba(33, 13, 22, 1) 84%
+  );
+}
+
+/* ---------------- TRENDING SECTION ---------------- */
+.trending {
+  padding: 20px 5%;
+  background: radial-gradient(
+      50% 500% at 50% -420%,
+      rgba(64, 97, 231, 0.4) 30%,
+      rgba(0, 0, 0, 0.1) 100%
+  ),
+  black;
+  background-clip: padding-box;
+  color: white;
+}
+.trending h2 {
+  margin-bottom: 15px;
+}
+
+/* Horizontal scroll container */
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+
+  scrollbar-width: none;   /* Firefox */
+}
+.carousel::-webkit-scrollbar {
+  display: none;           /* Chrome/Safari/Edge */
+}
+
+.card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.rank {
+  position: absolute;
+  left: -2px;
+  bottom: 20px;
+  font-size: 80px;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 2px white; /* Outline numbers */
+  z-index: 2;
+}
+.card:hover {
+  transform: scale(1.04);
+  transition: transform 0.3s ease;
+}
+
+
+/* ---------------- JOIN SECTION ---------------- */
+.join {
+  padding: 60px 8%;
+  background: #000; /* dark background */
+  color: white;
+  text-align: center;
+}
+
+.join h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* Container: grid layout */
+.join-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Matlab: jitni jagah mile utni columns banenge. */
+  gap: 30px;
+}
+
+/* Each item card */
+.join-item {
+  background: linear-gradient(to top, #6d09d844 0%, #141414 100%); /* ✅ Netflix-style gradient */
+  padding: 25px 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.join-item:hover {
+  transform: translateY(-8px);  /* Thoda upar uthne ka effect */
+  background: linear-gradient(to top, #6d09d844 0%, #141414 100%); /* ✅ Netflix-style gradient */
+}
+
+.join-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: invert(14%) sepia(86%) saturate(5486%) hue-rotate(268deg) brightness(89%) contrast(103%);
+
+}
+
+.join-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.join-item p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+
+/* ---------------- FAQ / QUESTIONS SECTION ---------------- */
+.questions {
+  background: #000;
+  color: white;
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.questions h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Question items */
+.question-item {
+  background: #111;
+  margin: 10px 0;
+  padding: 20px 25px;
+  border-radius: 8px;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.question-item:hover {
+  background: #1a1a1a;
+}
+
+/* summary style */
+.question-item summary {
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none; /* default arrow hatana */
+  position: relative;
+  padding-right: 25px; /* icon ke liye jagah */
+}
+
+.question-item summary::-webkit-details-marker {
+  display: none; /* default triangle remove */
+}
+
+/* icon add karna */
+.question-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* jab open ho to minus ho */
+.question-item[open] summary::after {
+  content: "–";
+}
+
+.question-item p {
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ---------------- FOOTER ---------------- */
+.footer {
+  background: #000;
+  color: #999;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Email input + button */
+.email-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.email-inp {
+  flex: 1;
+  min-width: 220px;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: #111;
+  color: #fff;
+}
+
+.btn {
+  padding: 12px 20px;
+  background: red;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Call text */
+.call {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.call a {
+  color: #999;
+  text-decoration: underline;
+}
+
+/* Footer links */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-links li a {
+  color: #999;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Language */
+.footer-lang {
+  margin: 40px 0;
+  text-align: left;      /* ✅ left align kar diya */
+  max-width: 900px;      /* ✅ links ke width ke equal */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-lang select {
+  width: auto;               /* ✅ apne content ke hisaab se */
+  min-width: 120px;          /* ✅ chhota screen par bhi readable */
+  max-width: 200px;          /* ✅ bada screen par control me */
+  padding: 8px 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: #111;
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .footer-lang select {
+    width: 100%;   /* ✅ pura line le lega */
+  }
+}
+
+
+/* Flixora India text */
+.flixora-india {
+  margin: 20px 0;
+  text-align: left;
+  max-width: 900px;      /* ✅ links ke width ke equal */
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+}
+
+/* Learn more */
+.ensure-learnmore {
+  font-size: 14px;
+  max-width: 600px;
+  margin: 10px auto;
+  font-weight: 600;
+  color: #666;
+}
+
+.ensure-learnmore a {
+  color: #1581f4;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .email-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
